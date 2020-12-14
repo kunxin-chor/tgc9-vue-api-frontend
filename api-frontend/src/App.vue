@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import Faults from './components/Faults';
-
 
 export default {
   name: 'App',
