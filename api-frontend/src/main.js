@@ -8,6 +8,7 @@ import Faults from './components/Faults';
 import AddFault from './components/AddFault';
 import Page2 from './components/Page2';
 import EditFault from './components/EditFault'
+import ConfirmDelete from './components/ConfirmDelete'
 
 Vue.config.productionTip = false;
 
@@ -24,6 +25,9 @@ const routes = [
     },
     {
         path: '/faults/:id/edit', component: EditFault
+    },
+    {
+        path: '/faults/:id/delete', component: ConfirmDelete
     }
 ]
 

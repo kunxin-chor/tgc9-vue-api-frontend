@@ -14,6 +14,8 @@
                 <li>Location: {{f.location}}</li>
                 <li>Block: {{f.block}}</li>
             </ul>
+            <router-link v-bind:to='getEditUrl(f)'>Edit</router-link> | 
+            <router-link v-bind:to='getDeleteUrl(f)'>Delete</router-link>
         </div>
     </div>
 </template>
@@ -36,6 +38,12 @@ export default {
         loadFaults:async function(){
             let response = await axios.get('https://3000-b7922321-9a58-4310-8255-84781f5cb1d2.ws-us03.gitpod.io/faults/');
             this.faults = response.data;
+        },
+        getEditUrl(fault) {
+            return `/faults/${fault._id}/edit`
+        },
+        getDeleteUrl(fault) {
+            return `/faults/${fault._id}/delete`
         }
     },
     computed:{
